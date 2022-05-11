@@ -1,13 +1,8 @@
 {
   "name": "myportfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/app.js",
-  "dependencies": {
-    "express": "^4.18.1",
-    "nodemon": "^2.0.16"
-  },
-  "devDependencies": {},
+  "description": "Mi portfolio",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DanielaCalisaya/prueba-git/issues"
   },
-  "homepage": "https://github.com/DanielaCalisaya/prueba-git#readme"
+  "homepage": "https://github.com/DanielaCalisaya/prueba-git#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
