@@ -1,11 +1,12 @@
 const express = require('express');
-const app = express();
+const app = express(); 
 const path = require('path');
-const PORT = 3030;
+const port = process.env.PORT || 3030;
 
 app.use(express.static('public'));
 
-app.use("view engine", "ejs");
+/* EJS Setea el template engine*/
+app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
 
 //routes
@@ -17,6 +18,6 @@ app.use('/', homePath);
 
 
 
-app.listen(PORT, () => 
-console.log(`Servidor levantado en el puerto ${PORT}
-->  http://localhost:${PORT}`))
+app.listen(port, () => 
+console.log(`Servidor levantado en el puerto ${port}
+->  http://localhost:${port}`))
