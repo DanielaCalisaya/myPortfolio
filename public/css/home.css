@@ -1,0 +1,27 @@
+body {
+    background-color: var(--color-dark-grey);
+    color: var(--color-pink);
+}
+
+img.photoBackground {
+    position: absolute;
+}
+
+div.header-container {
+    position: relative;
+}
+
+header {
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+}
+
+header div.logo {
+    
+}
+
+nav {
+    display: none;
+}
