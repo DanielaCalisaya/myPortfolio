@@ -1,27 +1,100 @@
+/* Mobile - 320px */
 body {
     background-color: var(--color-dark-grey);
     color: var(--color-pink);
 }
 
 img.photoBackground {
-    position: absolute;
-}
-
-div.header-container {
     position: relative;
 }
 
-header {
-    background-color: green;
+div.header-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.header-container header {
+    background-color: var(--color-lavender-blue);
+    /* filter: blur(6px); */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    top: 0;
+    padding: 5px;
     height: 50px;
 }
 
 header div.logo {
-    
+    width: 40px;
+    height: 40px;
 }
 
-nav {
+/* drop menu - mobile */
+header i.fas {
+    font-size: 20px;
+    margin: 10px 10px 0 0;
+}
+
+nav.dropMenu {
+    background-color: var(--color-dark-grey);
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
     display: none;
+}
+
+nav.dropMenu ul a {
+    text-decoration-line: none;
+    color: var(--color-pink);
+}
+
+nav.dropMenu ul a li {
+    list-style-type: none;
+    text-align: center;
+    background-color: brown;
+    padding: 7px 7px;
+}
+
+/* container photo and name */
+.profile {
+    /* display: flex;
+    justify-content: space-between; */
+    text-align: center;
+    padding-top: 5px;
+} 
+
+.profile img {
+    width: 80px;
+    height: 80px;
+}
+
+.profile h1 {
+    font-size: 25px;
+}
+
+/* secciones general*/
+body main .section-container {
+    text-align: center;
+    padding: 0 15px;
+}
+
+body main .section-container img.logo-habilidades {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+}
+
+body main .section-container h2.subtitles {
+    margin: 20px 0;
+}
+
+body main .section-container a img.contact {
+    width: 100px;
+    height: 100px;
+    margin: 0 5px;
+}
+
+body footer {
+    background-color: var(--color-lavender-blue);
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio ♥</title>
+    <title>My portfolio</title>
     <link 
         rel="stylesheet" 
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -24,33 +24,33 @@
         <header>
 
             <div class="logo">
-                <img src="" alt="Logo">
+                <img src="./img/logo.png" alt="Logo" width="100%">
             </div>
             
-            <i class="fas fa-bars"></i>
-
-            <nav>
+            <!-- icon hamburger and nav - mobile -->
+            <i class="fas fa-bars" onclick="dropMenu()"></i>
+            <nav class="dropMenu" id="navigation-burguer-menu">
                 <ul>
-                    <li><a href="#sobre-mi">Sobre mi</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <a href="#sobre-mi"><li>Sobre mi</li></a><hr>
+                    <a href="#habilidades"><li>Habilidades</li></a><hr>
+                    <a href="#proyectos"><li>Proyectos</li></a><hr>
+                    <a href="#contacto"><li>Contacto</li></a>
                 </ul>
             </nav>
     
         </header>
     
-        <div>
-            <img src="" alt="Foto de perfil">
-            <h1>Helen Daniela Calisaya</h1>
+        <div class="profile">
+            <img src="./img/logo.png" alt="Foto de perfil" width="100%">
+            <h1>Helen  Daniela  Calisaya</h1>
         </div>
 
     </div>
 
     <main>       
-        <section>
+        <section class="section-container">
 
-            <h2 id="sobre-mi">Sobre mi</h2>
+            <h2 class="subtitles" id="sobre-mi">Sobre mi</h2>
 
             <p> 
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -60,66 +60,77 @@
 
         </section>
 
-        <section>
+        <section class="section-container">
 
-            <h2 id="habilidades">Habilidades</h2>
+            <h2 class="subtitles" id="habilidades">Habilidades</h2>
 
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-
-        </section>
-
-        <section>
-
-            <h2 id="proyectos">Proyectos</h2>
-
-            <div>
-                <img src="" alt="">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Tempora aliquid qui ab eum, facilis inventore, 
-                    deleniti minima consectetur explicabo dolores sunt quod neque, 
-                    rem laboriosam assumenda quisquam labore optio quis.
-                </p>
-            </div>
-
-            <div>
-                <img src="" alt="">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Tempora aliquid qui ab eum, facilis inventore, 
-                    deleniti minima consectetur explicabo dolores sunt quod neque, 
-                    rem laboriosam assumenda quisquam labore optio quis.
-                </p>
-            </div>
-
-            <div>
-                <img src="" alt="">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Tempora aliquid qui ab eum, facilis inventore, 
-                    deleniti minima consectetur explicabo dolores sunt quod neque, 
-                    rem laboriosam assumenda quisquam labore optio quis.
-                </p>
-            </div>
-
-            <div>
-                <img src="" alt="">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Tempora aliquid qui ab eum, facilis inventore, 
-                    deleniti minima consectetur explicabo dolores sunt quod neque, 
-                    rem laboriosam assumenda quisquam labore optio quis.
-                </p>
-            </div>
+            <img src="./img/html.png" class="logo-habilidades" alt="HTML" width="100%">
+            <img src="./img/css.png" class="logo-habilidades" alt="Css" width="100%">
+            <img src="./img/javascript.png" class="logo-habilidades" alt="Javascript" width="100%">
+            <img src="./img/nodeJs.png" class="logo-habilidades" alt="Node Js" width="100%">
+            <img src="./img/express.png" class="logo-habilidades" alt="Express" width="100%">
+            <img src="./img/mySql.png" class="logo-habilidades" alt="My SQL" width="100%">
+            <img src="./img/git.png" class="logo-habilidades" alt="Git" width="100%">
+            <img src="./img/gitHub.png" class="logo-habilidades" alt="Git Hub" width="100%">
+            <img src="./img/react.png" class="logo-habilidades" alt="React" width="100%">
+            <img src="./img/canva.png" class="logo-habilidades" alt="Canva" width="100%">
+            <img src="./img/figma.png" class="logo-habilidades" alt="Figma" width="100%">
+            <img src="./img/slack.png" class="logo-habilidades" alt="Slack" width="100%">
+            <img src="./img/trello.png" class="logo-habilidades" alt="Trello" width="100%">
 
         </section>
 
-        <section>
+        <section class="section-container">
 
-            <h2 id="contacto">Contacto</h2>
+            <h2 class="subtitles" id="proyectos">Proyectos</h2>
 
-            <a href="">E-mail</a>
-            <a href="">Linkedin</a>
-            <a href="">Git Hub</a>
+            <div>
+                <img src="" alt="">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Tempora aliquid qui ab eum, facilis inventore, 
+                    deleniti minima consectetur explicabo dolores sunt quod neque, 
+                    rem laboriosam assumenda quisquam labore optio quis.
+                </p>
+            </div>
 
+            <div>
+                <img src="" alt="">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Tempora aliquid qui ab eum, facilis inventore, 
+                    deleniti minima consectetur explicabo dolores sunt quod neque, 
+                    rem laboriosam assumenda quisquam labore optio quis.
+                </p>
+            </div>
+
+            <div>
+                <img src="" alt="">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Tempora aliquid qui ab eum, facilis inventore, 
+                    deleniti minima consectetur explicabo dolores sunt quod neque, 
+                    rem laboriosam assumenda quisquam labore optio quis.
+                </p>
+            </div>
+
+            <div>
+                <img src="" alt="">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Tempora aliquid qui ab eum, facilis inventore, 
+                    deleniti minima consectetur explicabo dolores sunt quod neque, 
+                    rem laboriosam assumenda quisquam labore optio quis.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="section-container">
+
+            <h2 class="subtitles" id="contacto">Contacto</h2>
+
+            <a href="https://wa.me/5492996555715" target="_blank"><img class="contact" src="./img/whatsapp-contacto.png" alt="WhatsApp" width="100%"></a>
+            <a href="mailto:hdaniela127c@gmail.com" target="_blank"><img class="contact" src="./img/email-contacto.png" alt="Email" width="100%"></a>
+            <a href="https://www.linkedin.com/in/daniela-calisaya/" target="_blank"><img class="contact" src="./img/linkedin-contacto.png" alt="Linkedin" width="100%"></a>
+            <a href="https://github.com/DanielaCalisaya" target="_blank"><img class="contact" src="./img/github-contacto.png" alt="Git Hub" width="100%"></a> 
+        
         </section>
 
     </main>
@@ -127,6 +138,8 @@
     <footer>
         Desarrollado y diseñado por Daniela Calisaya 2022 Todos los derechos reservados
     </footer>
+
+    <script src="./js/header.js" defer></script>
 
 </body>
 </html>
