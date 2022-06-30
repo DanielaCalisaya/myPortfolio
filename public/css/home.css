@@ -4,6 +4,10 @@ body {
     color: var(--color-pink);
 }
 
+body main {
+    margin-bottom: 20px;
+}
+
 img.photoBackground {
     position: relative;
 }
@@ -89,12 +93,33 @@ body main .section-container h2.subtitles {
     margin: 20px 0;
 }
 
+/* section proyects */
+body main .section-container .proyect-container p {
+    margin: 15px 0;
+}
+
+body main .section-container .proyect-container a.code {
+    font-size: 28px;
+    color: var(--color-pink);
+    cursor: pointer;
+}
+
+body main .section-container hr.line {
+    margin: 30px auto;
+    width: 80%;
+    display: flex;
+}
+
+/* section contact */
 body main .section-container a img.contact {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 0 5px;
 }
 
 body footer {
     background-color: var(--color-lavender-blue);
+    height: 150px;
 }
+
+/* giff en el footer? */
