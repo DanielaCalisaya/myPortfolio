@@ -2,7 +2,8 @@
 body {
     background-color: var(--color-dark-grey);
     color: var(--color-pink);
-}
+    font-family: var(--font-pompiere);
+} 
 
 body main {
     margin-bottom: 20px;
@@ -10,8 +11,10 @@ body main {
 
 img.photoBackground {
     position: relative;
+    max-height: 700px;
 }
 
+/* container of header */
 div.header-container {
     position: absolute;
     width: 100%;
@@ -33,13 +36,13 @@ header div.logo {
     height: 40px;
 }
 
-/* drop menu - mobile */
+/* icon hamburger and nav - mobile */
 header i.fas {
     font-size: 20px;
     margin: 10px 10px 0 0;
 }
 
-nav.dropMenu {
+header nav.dropMenu {
     background-color: var(--color-dark-grey);
     position: absolute;
     width: 100%;
@@ -61,20 +64,33 @@ nav.dropMenu ul a li {
 }
 
 /* container photo and name */
-.profile {
+div.header-container .profile {
     /* display: flex;
     justify-content: space-between; */
     text-align: center;
     padding-top: 5px;
 } 
 
-.profile img {
+div.header-container .profile img {
     width: 80px;
     height: 80px;
 }
 
-.profile h1 {
-    font-size: 25px;
+div.header-container .profile h1 {
+    text-shadow: 2.8px 3px var(--color-dark-grey);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* 1er section - sobre mi */
+body main .section-container p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+body main .section-container img.sobreMi {
+    width: 170px;
+    height: 170px;
 }
 
 /* secciones general*/
@@ -83,19 +99,24 @@ body main .section-container {
     padding: 0 15px;
 }
 
+body main .section-container h2.subtitles {
+    margin: 20px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+/* end secciones general*/
+
+/* Logos-habilidades */
 body main .section-container img.logo-habilidades {
     width: 75px;
     height: 75px;
     margin: 5px;
 }
 
-body main .section-container h2.subtitles {
-    margin: 20px 0;
-}
-
 /* section proyects */
 body main .section-container .proyect-container p {
     margin: 15px 0;
+    font-size: 18px;
 }
 
 body main .section-container .proyect-container a.code {
@@ -112,14 +133,30 @@ body main .section-container hr.line {
 
 /* section contact */
 body main .section-container a img.contact {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     margin: 0 5px;
 }
 
+/* footer */
 body footer {
     background-color: var(--color-lavender-blue);
     height: 150px;
+    padding: 0 10px;
 }
 
-/* giff en el footer? */
+body footer p {
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 18px;
+}
+
+body footer img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+}
