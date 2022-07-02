@@ -160,3 +160,29 @@ body footer img {
     height: 70px;
     margin-bottom: 5px;
 }
+
+/* MEDIA QUERY - 450px */
+@media(min-width: 450px) {
+
+    body main .section-container {
+        padding: 0 25px; 
+    }
+
+    body main .section-container p {
+        font-size: 20px;
+    }
+
+    body main .section-container .proyect-container p {
+        font-size: 20px;
+    }
+
+    body footer p {
+        font-size: 20px;
+    }
+
+}
+
+/* MEDIA QUERY - 768px */
+@media(min-width: 768px) {
+
+}
