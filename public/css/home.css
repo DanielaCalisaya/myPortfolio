@@ -11,7 +11,7 @@ body main {
 
 img.photoBackground {
     position: relative;
-    height: 200px;  /*  */
+    height: 200px;    
     max-height: 700px;
 }
 
@@ -174,41 +174,85 @@ body footer img {
     margin-bottom: 5px;
 }
 
+
+
 /* MEDIA QUERY - 425px */
 @media(min-width: 425px) {
 
+    body div.header-container .profile {
+        padding-top: 40px;  
+    }
+
     body main .section-container {
-        padding: 0 25px; 
+        padding: 0 30px; 
     }
 
-    body main .section-container p {
+    body main .section-container p { /* p : sobre mi */
         font-size: 20px;
+        margin-bottom: 15px;
     }
 
-    img.photoBackground { /*  */
-        height: 240px; 
+    body main .section-container h2.subtitles {
+        margin: 30px 0;
     }
+
+    img.photoBackground { 
+        height: 240px; 
+    } 
 
     body main section.habilidades {
-        width: 500px;
+        width: 100%;
+        max-width: 880px;
     }
 
     body main .section-container img.logo-habilidades {
         width: 100px;
         height: 100px;
+    } 
+
+    body main .section-container .proyect-container a img {
+        max-width: 80%;
     }
 
     body main .section-container .proyect-container p {
-        font-size: 20px;
-    }
+        font-size: 20px;  /* p : description de los proyectos */
+    } 
 
     body footer p {
         font-size: 20px;
     }
 
+} 
+
+
+
+/* MEDIA QUERY - 550px */
+@media(min-width: 550px) {
+    
+    img.photoBackground {
+        height: 300px;    
+    }
+
+    div.header-container .profile img {
+        width: 120px;
+        height: 120px;
+    }
+
+    body div.header-container .profile {
+        padding-top: 50px;  
+    }
+
 }
+
+
 
 /* MEDIA QUERY - 768px */
 @media(min-width: 768px) {
+
+    
+
+    body main .section-container img.logo-habilidades {
+        margin: 10px;
+    }
 
 }
