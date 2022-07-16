@@ -5,6 +5,10 @@ body {
     font-family: var(--font-pompiere);
 } 
 
+header nav.dropMenuTablet { 
+    display: none;
+}
+
 body main {
     margin-bottom: 20px;
 }
@@ -249,7 +253,32 @@ body footer img {
 /* MEDIA QUERY - 768px */
 @media(min-width: 768px) {
 
-    
+    header i.fas {
+       display: none;
+    }
+
+    header nav.dropMenuTablet { /* --- */
+        display: flex;
+        flex-direction: row;
+    }
+
+    div.header-container .profile {
+        display: flex;
+        justify-content: space-around; 
+    } 
+
+    div.header-container .profile img {
+        width: 150px;
+        height: 150px;
+    }
+
+    div.header-container .profile h1 {
+        text-shadow: 2.8px 4px var(--color-dark-grey);
+        font-size: 40px;
+        /* font-weight: 600; */
+        display: flex;
+        align-items: center;
+    }
 
     body main .section-container img.logo-habilidades {
         margin: 10px;
