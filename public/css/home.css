@@ -180,9 +180,25 @@ body main .section-container a img.contact {
         display: flex;
         align-items: center;
     }
-    
+
     body main .section-container img.logo-habilidades {
         margin: 10px;
+    }
+
+    body main .containerSobreMi div {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    body main .containerSobreMi p {
+        width: 300px;
+        display: flex;
+        align-items: center;
+    }
+
+    body main .containerSobreMi img.sobreMi{
+        width: 210px;
+        height: 210px;
     }
 
 }
