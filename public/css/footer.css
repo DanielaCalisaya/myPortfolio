@@ -1,0 +1,31 @@
+/* footer */
+body footer {
+    background-color: var(--color-lavender-blue);
+    height: 200px;
+    padding: 0 10px;
+}
+
+body footer p {
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 18px;
+}
+
+body footer img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+}
+
+/* MEDIA QUERY - 425px */
+@media(min-width: 425px) {
+
+    body footer p {
+        font-size: 20px;
+    }
+
+}

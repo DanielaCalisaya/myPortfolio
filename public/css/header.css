@@ -1,0 +1,75 @@
+/* Mobile - 320px */
+header nav.dropMenuTablet { 
+    display: none;
+}
+
+/* container of header */
+div.header-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.header-container #header-id {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    padding: 5px;
+    height: 50px;
+    /* background: white; */
+    box-shadow: 0 4px 18px #000; /* 10px 30px */
+   /* border: 1px solid #ffffff40; */
+}
+
+.header-container .filter {
+    -webkit-backdrop-filter: blur(15px); /* navegador firefox */
+    backdrop-filter: blur(15px); /* chrome */
+    background-color: rgba(243, 243, 243, 0.2);
+}
+
+header div.logo {
+    width: 40px;
+    height: 40px;
+}
+
+/* icon hamburger and nav - mobile */
+header i.fas {
+    font-size: 20px;
+    margin: 10px 10px 0 0;
+}
+
+header nav.dropMenu {
+    background-color: var(--color-dark-grey);
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    display: none;
+}
+
+nav.dropMenu ul a {
+    text-decoration-line: none;
+    color: var(--color-pink);
+}
+
+nav.dropMenu ul a li {
+    background: var(--color-lavender-blue); 
+    list-style-type: none;
+    text-align: center;
+    padding: 7px 7px;
+}
+
+
+/* MEDIA QUERY - 768px */
+@media(min-width: 768px) {
+
+    header i.fas {
+        display: none;
+    }
+ 
+    header nav.dropMenuTablet { /* --- */
+        display: flex;
+        flex-direction: row;
+    }
+
+}

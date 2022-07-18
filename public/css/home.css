@@ -5,74 +5,14 @@ body {
     font-family: var(--font-pompiere);
 } 
 
-header nav.dropMenuTablet { 
-    display: none;
-}
-
-body main {
-    margin-bottom: 20px;
-}
-
 img.photoBackground {
     position: relative;
     height: 200px;    
     max-height: 700px;
 }
 
-/* container of header */
-div.header-container {
-    position: absolute;
-    width: 100%;
-    top: 0;
-}
-
-.header-container #header-id {
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    padding: 5px;
-    height: 50px;
-    /* background: white; */
-    box-shadow: 0 4px 18px #000; /* 10px 30px */
-   /* border: 1px solid #ffffff40; */
-}
-
-.header-container .filter {
-    -webkit-backdrop-filter: blur(15px); /* navegador firefox */
-    backdrop-filter: blur(15px); /* chrome */
-    background-color: rgba(243, 243, 243, 0.2);
-}
-
-header div.logo {
-    width: 40px;
-    height: 40px;
-}
-
-/* icon hamburger and nav - mobile */
-header i.fas {
-    font-size: 20px;
-    margin: 10px 10px 0 0;
-}
-
-header nav.dropMenu {
-    background-color: var(--color-dark-grey);
-    position: absolute;
-    width: 100%;
-    top: 50px;
-    left: 0;
-    display: none;
-}
-
-nav.dropMenu ul a {
-    text-decoration-line: none;
-    color: var(--color-pink);
-}
-
-nav.dropMenu ul a li {
-    background: var(--color-lavender-blue); 
-    list-style-type: none;
-    text-align: center;
-    padding: 7px 7px;
+body main {
+    margin-bottom: 20px;
 }
 
 /* container photo and name */
@@ -155,33 +95,13 @@ body main .section-container a img.contact {
     margin: 0 5px;
 }
 
-/* footer */
-body footer {
-    background-color: var(--color-lavender-blue);
-    height: 200px;
-    padding: 0 10px;
-}
-
-body footer p {
-    text-align: center; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    font-size: 18px;
-}
-
-body footer img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 5px;
-}
-
-
 
 /* MEDIA QUERY - 425px */
 @media(min-width: 425px) {
+
+    img.photoBackground { 
+        height: 240px; 
+    } 
 
     body div.header-container .profile {
         padding-top: 40px;  
@@ -199,10 +119,6 @@ body footer img {
     body main .section-container h2.subtitles {
         margin: 30px 0;
     }
-
-    img.photoBackground { 
-        height: 240px; 
-    } 
 
     body main section.habilidades {
         width: 100%;
@@ -222,12 +138,7 @@ body footer img {
         font-size: 20px;  /* p : description de los proyectos */
     } 
 
-    body footer p {
-        font-size: 20px;
-    }
-
 } 
-
 
 
 /* MEDIA QUERY - 550px */
@@ -249,29 +160,19 @@ body footer img {
 }
 
 
-
 /* MEDIA QUERY - 768px */
 @media(min-width: 768px) {
-
-    header i.fas {
-       display: none;
-    }
-
-    header nav.dropMenuTablet { /* --- */
-        display: flex;
-        flex-direction: row;
-    }
 
     div.header-container .profile {
         display: flex;
         justify-content: space-around; 
     } 
-
+ 
     div.header-container .profile img {
         width: 150px;
         height: 150px;
     }
-
+ 
     div.header-container .profile h1 {
         text-shadow: 2.8px 4px var(--color-dark-grey);
         font-size: 40px;
@@ -279,7 +180,7 @@ body footer img {
         display: flex;
         align-items: center;
     }
-
+    
     body main .section-container img.logo-habilidades {
         margin: 10px;
     }
