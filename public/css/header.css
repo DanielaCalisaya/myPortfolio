@@ -12,7 +12,7 @@ div.header-container {
 
 .header-container #header-id {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     top: 0;
     padding: 5px;
     height: 50px;
@@ -66,10 +66,38 @@ nav.dropMenu ul a li {
     header i.fas {
         display: none;
     }
+
+    .header-container #header-id {
+        height: 55px;
+        padding-right: 30px;
+    }
  
-    header nav.dropMenuTablet { /* --- */
+    header div.logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    header nav.dropMenuTablet { 
+        display: flex;
+        width: 300px;
+    }
+
+    header nav.dropMenuTablet ul {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav.dropMenuTablet ul a {
+        color: var(--color-pink);
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 20px;
+    }
+
+    header nav.dropMenuTablet ul a li {
+        list-style: none;
     }
 
 }
