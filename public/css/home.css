@@ -185,6 +185,7 @@ body main .section-container a img.contact {
         margin: 10px;
     }
 
+    /* section Sobre mi */
     body main .containerSobreMi div {
         display: flex;
         justify-content: space-around;
@@ -200,5 +201,5 @@ body main .section-container a img.contact {
         width: 210px;
         height: 210px;
     }
-
+    
 }
