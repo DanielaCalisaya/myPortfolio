@@ -86,8 +86,42 @@ p {
 /* ----------Components---------- */
 
 /* ----------Menu---------- */
+.header__container__menu__btn {
+    outline: thin solid var(--first-color); /* Ese margen o linea que da el botón por defecto que sea delgado y sólido, con color */
+    border: 0; /* borde por defecto */
+    cursor: pointer;
+    background-color: var(--second-color);
+}
+.header__container__menu__btn svg {
+    fill: var(--first-color); /* Asi le damos color al svg */
+}
 .header__container__menu {
-    display: none;
+    background-color: var(--second-color);
+    position: fixed;/* Al tener una posicion fixed pierde sus propiedades de ancho y alto */
+    left: 0;
+    bottom: var(--header-height);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;/* si activamos o no la reacción a interactividad, porque por mas que la opacidad sea 0, al pasar sobre el elemento se ve la manito */
+    opacity: 0;
+    transition: opacity .5 ease; /* transicion a la opacidad con efecto de aceleración normal */
+}
+.header__container__menu.is-active { /* Le añado una clase */
+    opacity: 1;
+    pointer-events: auto;
+}
+.header__container__menu a {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--first-color);
+}
+.header__container__menu a:hover {
+    color: var(--white-color);
+    background-color: var(--first-color);
 }
 
 /* ----------Utilities---------- */
