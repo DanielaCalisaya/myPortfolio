@@ -85,6 +85,28 @@ p {
 
 /* ----------Components---------- */
 
+/* ----------HeroImage---------- */
+.hero__image {
+    background-image: var(--hero-image); 
+    /* la variable image no está en root, sino que se crea en el atributo styles que se le paso al contenedor article, y solo se define alli */
+    background-repeat: no-repeat;
+    background-size: cover; /* se adapte a la altura de manera proporcional del contenedor */
+    background-position: center; 
+    background-attachment: var(--hero-attachment); /* si tuviera scroll se desplazará junto con el contenido */
+}
+.hero__image--opacity {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-opacity-color);  
+}
+.hero__image--title {
+    font-size: 7.5vw; /* Fluid web design (en este caso con estas medidas no necesitaremos mas media querys para el title) */
+    color: var(--hero-title-color);
+}
 /* ----------Menu---------- */
 .header__container__menu__btn {
     outline: thin solid var(--first-color); /* Ese margen o linea que da el botón por defecto que sea delgado y sólido, con color */
@@ -149,6 +171,17 @@ p {
 /* ----------Utilities---------- */
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+.btn { /* boton dentro del hero */
+    border-radius: .5rem;
+    padding: 1rem;
+    display: inline-block; /* las a tiene las caracteristicas de elemento en linea, le saco para mejor manejo */
+    width: 200px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--first-color);
 }
 .header__container {
     margin-left: auto;

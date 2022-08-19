@@ -36,8 +36,17 @@
         </section>
     </header>
 
-    <section id="inicio" class="home"><!-- Enlaces en español, porque el sitio está en español y las clases en ingles -->
-        <h2>Inicio</h2>
+    <section id="inicio" class="home"> <!-- Enlaces en español, porque el sitio está en español y las clases en ingles -->
+        <article class="hero__image" style="--hero-image: url('assets/hero-image.png'); --hero-attachment: fixed;"> <!-- todo el contenedor --> 
+            <aside class="hero__image--opacity" style="--hero-opacity-color:var(--black-alpha-color)"> <!-- elemento que va encima de la imagen que tiene la opacidad -->
+                <div class="hero__image--content"> <!-- contenido con el texto -->
+                    <h2 class="hero__image--title" style="--hero-title-color: var(--white-color)">
+                        Bienvenidos<br>a mi sitio
+                    </h2>
+                    <a href="#contacto" class="btn">CONTÁCTAME</a>
+                </div>
+            </aside>
+        </article>
     </section>
 
     <section id="acerca" class="about">
