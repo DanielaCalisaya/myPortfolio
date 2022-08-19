@@ -105,7 +105,7 @@ p {
     flex-direction: column;
     pointer-events: none;/* si activamos o no la reacción a interactividad, porque por mas que la opacidad sea 0, al pasar sobre el elemento se ve la manito */
     opacity: 0;
-    transition: opacity .5 ease; /* transicion a la opacidad con efecto de aceleración normal */
+    transition: opacity 0.5s ease; /* transicion a la opacidad con efecto de aceleración normal */
 }
 .header__container__menu.is-active { /* Le añado una clase */
     opacity: 1;
