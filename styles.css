@@ -124,6 +124,28 @@ p {
     background-color: var(--first-color);
 }
 
+@media screen and (min-width: 1024px) {
+    .header__container__menu__btn {
+        display: none;
+    }
+    .header__container__menu {
+        position: static; /* vuelve al valor normal */
+        width: auto; /* que se adapte a al ancho que tengan los enlaces */
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .header__container__menu a {
+        padding: 0 1rem;
+    }
+    .header__container__menu a:last-child {
+        padding-right: 0;
+      }
+    .header__container__menu a:hover {
+        background-color: transparent;
+    }
+}
+
 /* ----------Utilities---------- */
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
@@ -158,4 +180,24 @@ p {
     font-weight: bold;
     font-size: 2rem;
     text-decoration: none;
+}
+
+
+/* MEDIA QUERY - 768 px */
+@media screen and (min-width: 768px) { /* cuando el dispositivo sea pantalla y cuando la minima anchura sea 768*/
+    
+}
+
+
+/* MEDIA QUERY - 1024 px */
+@media screen and (min-width: 1024px) {
+    .header {
+        /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
+        y se comportará como elemento fijo a la altura que yo lo defina,
+        y no se posiciona sobre ningun elemento */
+        position: sticky; 
+        top: 0;
+        padding: 0.5rem; 
+        height: calc(var(--header-height) - 0.5rem); /* se resta este 0.5rem al valor de la variable */
+    }
 }
