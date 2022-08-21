@@ -168,6 +168,31 @@ p {
     }
 }
 
+/* ----------ProgressBar---------- */
+progress {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--gray-color);
+}
+progress::-webkit-progress-bar { /* seudoclases -> */
+    background-color: var(--gray-color);
+}
+progress::-webkit-progress-value {
+    background-color: var(--gray-dark-color);
+}
+progress::-moz-progress-bar { /* para el navegador Firefox */
+    background-color: var(--gray-dark-color);
+}
+.progress {
+    margin: 1rem auto;
+}
+.progress > p { /* dentro de progress hay hijos directos(p) */
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem; 
+}
+
 /* ----------Utilities---------- */
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
@@ -188,11 +213,44 @@ p {
     margin-right: auto;
     max-width: var(--max-width);
 }
+.grey-scale { /* estilo de mi foto */
+   filter:grayscale(1); /* escala de grises */
+}
 .none {
     display: none;
 }
+.section {
+    padding: 2rem 1rem;
+}
+.text-center { /* alinear texto o botones de la parte acerca de */
+    text-align: center;
+}
+.text-left { 
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+@media screen and (min-width: 1024px) {
+    .full-lg-screen { /* section acerca...*/
+        width: 100%;
+        min-height: 100vh;
+    }
+    .text-lg-center {
+        text-align: center;
+    }
+    .text-lg-left {
+        text-align: left;
+    }
+    .text-lg-right {
+        text-align: right;
+    }
+}
 
 /* ----------Site Styles---------- */
+.about > article { /* section acerca(article) */
+    margin-bottom: 2rem;
+}
 .header {
     position: fixed; /* estará fijo */
     left: 0;
@@ -224,6 +282,12 @@ p {
 
 /* MEDIA QUERY - 1024 px */
 @media screen and (min-width: 1024px) {
+    .about { /* en desktop tiene 3 columnas las section acerca */
+        display: grid;
+        grid-template-columns: repeat(3, 30%);/* que repita el patrón 3 veces al 30%, sobrará 10%, eso será para el espacio entre si */
+        justify-content: space-between;
+        align-content: center;
+    }
     .header {
         /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
         y se comportará como elemento fijo a la altura que yo lo defina,
