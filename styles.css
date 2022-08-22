@@ -353,6 +353,27 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     height: 100%;
     border: thin solid var(--white-color);
 }
+.portfolio__modal {
+    background-color: var(--white-color);
+    padding: 1rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.portfolio__modal h3 {
+    border-bottom: medium solid var(--first-color);
+    padding: .5rem 0;
+    margin: 1rem auto;
+    color: var(--title-color);
+}
+.portfolio__modal-details {
+    display: grid;
+    grid-template-columns: 40% 60%; /* letra en negrita ocupa el 40 y los detalles de cada punto ocupa 60 */
+    grid-auto-rows: 2rem; /* espaciado en las filas */
+}
+.portfolio__modal-details b {
+    color: var(--first-color);
+}
 .service__card { /* tarjetas section services */
     margin: 1rem auto;
     padding: 1rem;
@@ -375,6 +396,14 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     }
     .portfolio .section__title { 
         grid-column: span 2;
+    }
+    .portfolio__modal {
+        flex-direction: row;
+        max-width: 800px;
+    }
+    .portfolio__modal-info {
+        margin-left: 1rem;
+        align-self: center; /* para el centrado en el eje vertical de un contenedor hijo */
     }
     .services > .services__container {
         display: grid;
