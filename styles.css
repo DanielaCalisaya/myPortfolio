@@ -194,6 +194,9 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 }
 
 /* ----------Utilities---------- */
+.bg-gray-light { /* clase creada para el fondo de la seccion services */
+    background-color: var(--gray-light-color);
+}
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
@@ -221,6 +224,15 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 }
 .section {
     padding: 2rem 1rem;
+}
+.section__title { /* titulos de las secciones */
+    border-top: thin solid var(--first-color);/* linea delgada */
+    border-bottom: thin solid var(--first-color);
+    width: 250px;
+    margin: 2rem auto;
+    padding: .5rem 1rem;
+    text-align: center;
+    color: var(--title-color);
 }
 .text-center { /* alinear texto o botones de la parte acerca de */
     text-align: center;
@@ -272,11 +284,31 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     font-size: 2rem;
     text-decoration: none;
 }
+.service__card { /* tarjetas section services */
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+.service__card h3 {
+    color: var(--title-color);
+}
+.service__card svg {
+    margin-bottom: 1.25rem;
+    fill: var(--first-color);
+}
 
 
 /* MEDIA QUERY - 768 px */
 @media screen and (min-width: 768px) { /* cuando el dispositivo sea pantalla y cuando la minima anchura sea 768*/
-    
+    .services > .services__container {
+        display: grid;
+        grid-template-columns: repeat(2,45%); /* 2 por 45, da 90, queda 10 de margen para el justify content */
+        justify-content: space-between;
+        align-content: center;
+    }
+    .services .section__title { /* al titulo le decimos que ocupe las dos celdas, sino lo maneja como otra card, porque es hijo directo del div */
+        grid-column: span 2;
+    }
 }
 
 
@@ -296,5 +328,11 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
         top: 0;
         padding: 0.5rem; 
         height: calc(var(--header-height) - 0.5rem); /* se resta este 0.5rem al valor de la variable */
+    }
+    .services > .services__container {
+        grid-template-columns: repeat(3,30%); 
+    }
+    .services .section__title { 
+        grid-column: span 3;
     }
 }
