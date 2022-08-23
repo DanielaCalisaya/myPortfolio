@@ -298,6 +298,24 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 .about > article { /* section acerca(article) */
     margin-bottom: 2rem;
 }
+.contact__card {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contact__card > svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--first-color);
+}
+.contact__card > small {
+    margin-top: -1rem;
+}
 .header {
     position: fixed; /* estará fijo */
     left: 0;
@@ -390,6 +408,11 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 
 /* MEDIA QUERY - 768 px */
 @media screen and (min-width: 768px) { /* cuando el dispositivo sea pantalla y cuando la minima anchura sea 768*/
+    .contact__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
     .portfolio > .container {
         display: grid;
         grid-template-columns: repeat(2, 50%);
@@ -424,6 +447,10 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
         grid-template-columns: repeat(3, 30%);/* que repita el patrón 3 veces al 30%, sobrará 10%, eso será para el espacio entre si */
         justify-content: space-between;
         align-content: center;
+    }
+    .contact__cards {
+        grid-template-columns: repeat(4, 24%); /* ese 4 sobrante se reparte para el espaciado en si */
+        justify-content: space-between;
     }
     .header {
         /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
