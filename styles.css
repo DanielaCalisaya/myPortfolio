@@ -389,6 +389,13 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 .contact__card > small {
     margin-top: -1rem;
 }
+.footer {
+    margin-bottom: var(--header-height);
+    padding: 1rem;
+    text-align: center;
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
 .header {
     position: fixed; /* estará fijo */
     left: 0;
@@ -524,6 +531,10 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     .contact__cards {
         grid-template-columns: repeat(4, 24%); /* ese 4 sobrante se reparte para el espaciado en si */
         justify-content: space-between;
+    }
+    .footer {
+        margin-bottom: 0;
+        background-color: var(--second-color);
     }
     .header {
         /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
