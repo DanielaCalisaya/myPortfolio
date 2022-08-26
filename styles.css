@@ -16,7 +16,8 @@
     --text-color: #222;
     --white-alpha-color: rgba(255, 255, 255, 0.5);
     --black-alpha-color: rgba(0, 0, 0, 0.5);
-    --font: 'Pompiere', cursive;
+    --font: 'Raleway', sans-serif;
+    --font-logo: 'Nanum Pen Script', cursive;
     --max-width: 1200px;
     --header-height: 4rem;
 }
@@ -413,6 +414,7 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 }
 .header__container__logo a {
     color: var(--first-color);
+    font-family: var(--font-logo);
     font-weight: bold;
     font-size: 2rem;
     text-decoration: none;
