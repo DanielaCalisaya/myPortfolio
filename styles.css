@@ -303,9 +303,9 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 }
 
 /* ----------Utilities---------- */
-.bg-gray-light { /* clase creada para el fondo de la seccion services */
+/* .bg-gray-light {  clase creada para el fondo de la seccion services 
     background-color: var(--gray-light-color);
-}
+} */
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
@@ -554,9 +554,9 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
         grid-column: span 3;
     }
     .services > .services__container {
-        grid-template-columns: repeat(3,30%); 
+        grid-template-columns: repeat(4, 24%); /* 3, 30% */
     }
     .services .section__title { 
-        grid-column: span 3;
+        grid-column: span 4; /* 3 */
     }
 }
