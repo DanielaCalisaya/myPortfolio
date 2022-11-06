@@ -16,8 +16,8 @@
     --text-color: #222;
     --white-alpha-color: rgba(255, 255, 255, 0.5);
     --black-alpha-color: rgba(0, 0, 0, 0.5);
-    --font: 'Raleway', sans-serif;
-    --font-logo: 'Nanum Pen Script', cursive;
+    --font: 'Zen Antique', serif;
+    --font-logo: 'Caveat', cursive; 
     --max-width: 1200px;
     --header-height: 4rem;
 }
@@ -183,6 +183,9 @@ p {
     color: var(--hero-title-color);
 }
 /* ----------Menu---------- */
+.header__container__logo svg{
+    fill: var(--first-color);
+}
 .header__container__menu__btn {
     outline: thin solid var(--first-color); /* Ese margen o linea que da el botón por defecto que sea delgado y sólido, con color */
     border: 0; /* borde por defecto */
@@ -308,7 +311,7 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     background-color: var(--gray-light-color);
 } */
 .box-shadow-1 {
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0.25rem 0.25rem 1rem var(--first-alpha-color)/* (0, 0, 0, 0.25) */
 }
 .btn { /* boton dentro del hero */
     border-radius: .5rem;
@@ -547,6 +550,9 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
         top: 0;
         padding: 0.5rem; 
         height: calc(var(--header-height) - 0.5rem); /* se resta este 0.5rem al valor de la variable */
+    }
+    .header__container__logo svg {
+        display: none;
     }
     .portfolio > .container {
         grid-template-columns: repeat(3, 1fr);
