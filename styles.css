@@ -91,6 +91,7 @@ p {
 .contact__form {
     margin: 2rem auto;
     padding: 1rem;
+    border: thin solid var(--first-color);
     max-width: 800px;
 }
 .contact__form > * { /* todos los hijos directos de contact__form... */
@@ -101,16 +102,16 @@ p {
 }
 .contact__form input,
 .contact__form textarea {
-    font-size: 0.85rem; /* agarra el boton? */
+    font-size: 0.85rem;
     font-family: var(--font);
+    outline: none;
 }
 .contact__form input {
-    border: 0;
-    padding-left: 0; 
-    border-bottom: thin solid var(--gray-dark-color);
+    border: 0; 
+    /* border-bottom: thin solid var(--gray-dark-color); */
 }
 .contact__form textarea {
-    border: thin solid var(--gray-dark-color);
+   /*  border: thin solid var(--gray-dark-color); */
     resize: none; /* quita ese triangulo por defecto para que tenga un ancho y alto fijo asi no se puede modificar */
 }
 .contact__form input[type="submit"] { /* osea que los estilos se los aplica al submit pero apunta al tipo submit no a todos, usamos selector */
@@ -118,6 +119,7 @@ p {
     cursor: pointer;
     font-size: 1rem; 
     transition: all 0.5s ease-in-out;
+    border: 0;
 }
 .contact__form input[type="submit"]:hover {
     opacity: 0.75;
@@ -256,7 +258,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--black-alpha-color);
+    color: var(--first-color);
+    background-color: var(--second-alpha-color);/* --black-alpha-color */
     opacity: 0;
     pointer-events: none; /* quitamos interactividad */
     transition: all 1s;
@@ -272,38 +275,13 @@ p {
 .modal__close svg {
     width: 3rem;
     height: 3rem;
-    fill: var(--first-color); /* para svg, en vez de color -> fill */
+    fill: var(--second-color); /* para svg, en vez de color -> fill */
 }
 .modal[id|="proyecto"]:target { 
     /* busca todos los elementos que tengan la clase modal y q su nombre de id 
     empieze con la palabra proyecto y además sea el target de la pag en ese momento */
     opacity: 1;
     pointer-events: auto; 
-}
-
-/* ----------ProgressBar---------- */
-progress {
-    width: 100%;
-    height: 1rem;
-    background-color: var(--gray-color);
-}
-progress::-webkit-progress-bar { /* seudoclases -> */
-    background-color: var(--gray-color);
-}
-progress::-webkit-progress-value {
-    background-color: var(--gray-dark-color);
-}
-progress::-moz-progress-bar { /* para el navegador Firefox */
-    background-color: var(--gray-dark-color);
-}
-.progress {
-    margin: 1rem auto;
-}
-.progress > p { /* dentro de progress hay hijos directos(p) */
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem; 
 }
 
 /* ----------Utilities---------- */
@@ -313,7 +291,7 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem var(--first-alpha-color)/* (0, 0, 0, 0.25) */
 }
-.btn { /* boton dentro del hero */
+.btn { 
     border-radius: .5rem;
     padding: 1rem;
     display: inline-block; /* las a tiene las caracteristicas de elemento en linea, le saco para mejor manejo */
@@ -347,7 +325,7 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     text-align: center;
     color: var(--white-color);/* --title-color */
 }
-.text-center { /* alinear texto o botones de la parte acerca de */
+.text-center { 
     text-align: center;
 }
 .text-left { 
@@ -423,16 +401,113 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     font-size: 2rem;
     text-decoration: none;
 }
+.skill__card { /* tarjetas section skills */
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center; 
+}
+.skill__card h3 {
+    color: var(--title-color);
+}
+.skill__card svg {
+    margin-bottom: 1.25rem;
+    fill: var(--first-color);
+}
+
+
+/* MEDIA QUERY - 768 px */
+@media screen and (min-width: 768px) { /* cuando el dispositivo sea pantalla y cuando la minima anchura sea 768*/
+    .contact__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
+    .skills > .skills__container {
+        display: grid;
+        grid-template-columns: repeat(2,45%); /* 2 por 45, da 90, queda 10 de margen para el justify content */
+        justify-content: space-between;
+        align-content: center;
+    }
+    .skills .section__title { /* al titulo le decimos que ocupe las dos celdas, sino lo maneja como otra card, porque es hijo directo del div */
+        grid-column: span 2;
+    }
+}
+
+
+/* MEDIA QUERY - 1024 px */
+@media screen and (min-width: 1024px) {
+    .about { /* en desktop tiene 3 columnas las section acerca */
+        display: grid;
+        grid-template-columns: repeat(3, 30%);/* que repita el patrón 3 veces al 30%, sobrará 10%, eso será para el espacio entre si */
+        justify-content: space-between;
+        align-content: center;
+    }
+    .contact__cards {
+        grid-template-columns: repeat(4, 24%); /* ese 4 sobrante se reparte para el espaciado en si */
+        justify-content: space-between;
+    }
+    .footer {
+        margin-bottom: 0;
+        /* background-color: var(--second-color); */
+    }
+    .header {
+        /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
+        y se comportará como elemento fijo a la altura que yo lo defina,
+        y no se posiciona sobre ningun elemento */
+        position: sticky; 
+        top: 0;
+        padding: 0.5rem; 
+        height: calc(var(--header-height) - 0.5rem); /* se resta este 0.5rem al valor de la variable */
+    }
+    .header__container__logo svg {
+        display: none;
+    }
+    .skills > .skills__container {
+        grid-template-columns: repeat(4, 24%); /* 3, 30% */
+    }
+    .skills .section__title { 
+        grid-column: span 4; /* 3 */
+    }
+}
+
+
+/* ----------ProgressBar---------- 
+progress {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--gray-color);
+}
+progress::-webkit-progress-bar {  seudoclases -> *
+    background-color: var(--gray-color);
+}
+progress::-webkit-progress-value {
+    background-color: var(--gray-dark-color);
+}
+progress::-moz-progress-bar {  para el navegador Firefox 
+    background-color: var(--gray-dark-color);
+}
+.progress {
+    margin: 1rem auto;
+}
+.progress > p {  dentro de progress hay hijos directos(p) 
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem; 
+} */
+
+
+/* ----------Portfolio----------
 .portfolio__card {
     position: relative;
     width: 100%;
     margin: 0 auto;
     display: block;
 }
-.portfolio__card img { /* son img cuadradas, no hay tantos inconvenientes si ponemos todo al 100% */
+.portfolio__card img {  son img cuadradas, no hay tantos inconvenientes si ponemos todo al 100% 
     width: 100%;
     height: 100%;
-    object-fit: cover; /* para evitar q se pierda la proporcion de la img */
+    object-fit: cover;  para evitar q se pierda la proporcion de la img 
 }
 .portfolio__card-info {
     position: absolute;
@@ -472,33 +547,13 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
 }
 .portfolio__modal-details {
     display: grid;
-    grid-template-columns: 40% 60%; /* letra en negrita ocupa el 40 y los detalles de cada punto ocupa 60 */
-    grid-auto-rows: 2rem; /* espaciado en las filas */
+    grid-template-columns: 40% 60%;  letra en negrita ocupa el 40 y los detalles de cada punto ocupa 60 
+    grid-auto-rows: 2rem;  espaciado en las filas 
 }
 .portfolio__modal-details b {
     color: var(--first-color);
 }
-.service__card { /* tarjetas section services */
-    margin: 1rem auto;
-    padding: 1rem;
-    text-align: center;
-}
-.service__card h3 {
-    color: var(--title-color);
-}
-.service__card svg {
-    margin-bottom: 1.25rem;
-    fill: var(--first-color);
-}
-
-
-/* MEDIA QUERY - 768 px */
-@media screen and (min-width: 768px) { /* cuando el dispositivo sea pantalla y cuando la minima anchura sea 768*/
-    .contact__cards {
-        display: grid;
-        grid-template-columns: repeat(2, 48%);
-        justify-content: space-between;
-    }
+@media screen and (min-width: 768px) {
     .portfolio > .container {
         display: grid;
         grid-template-columns: repeat(2, 50%);
@@ -512,58 +567,15 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     }
     .portfolio__modal-info {
         margin-left: 1rem;
-        align-self: center; /* para el centrado en el eje vertical de un contenedor hijo */
-    }
-    .services > .services__container {
-        display: grid;
-        grid-template-columns: repeat(2,45%); /* 2 por 45, da 90, queda 10 de margen para el justify content */
-        justify-content: space-between;
-        align-content: center;
-    }
-    .services .section__title { /* al titulo le decimos que ocupe las dos celdas, sino lo maneja como otra card, porque es hijo directo del div */
-        grid-column: span 2;
+        align-self: center;  para el centrado en el eje vertical de un contenedor hijo 
     }
 }
-
-
-/* MEDIA QUERY - 1024 px */
 @media screen and (min-width: 1024px) {
-    .about { /* en desktop tiene 3 columnas las section acerca */
-        display: grid;
-        grid-template-columns: repeat(3, 30%);/* que repita el patrón 3 veces al 30%, sobrará 10%, eso será para el espacio entre si */
-        justify-content: space-between;
-        align-content: center;
-    }
-    .contact__cards {
-        grid-template-columns: repeat(4, 24%); /* ese 4 sobrante se reparte para el espaciado en si */
-        justify-content: space-between;
-    }
-    .footer {
-        margin-bottom: 0;
-        /* background-color: var(--second-color); */
-    }
-    .header {
-        /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
-        y se comportará como elemento fijo a la altura que yo lo defina,
-        y no se posiciona sobre ningun elemento */
-        position: sticky; 
-        top: 0;
-        padding: 0.5rem; 
-        height: calc(var(--header-height) - 0.5rem); /* se resta este 0.5rem al valor de la variable */
-    }
-    .header__container__logo svg {
-        display: none;
-    }
     .portfolio > .container {
         grid-template-columns: repeat(3, 1fr);
     }
     .portfolio .section__title { 
         grid-column: span 3;
     }
-    .services > .services__container {
-        grid-template-columns: repeat(4, 24%); /* 3, 30% */
-    }
-    .services .section__title { 
-        grid-column: span 4; /* 3 */
-    }
 }
+*/
