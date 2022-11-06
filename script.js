@@ -29,7 +29,8 @@
        debe remover todo el menu y la x y mostrar la hamburguesa 
 */
 
-/* ----------ContactForm---------- */
+/* ----------ContactForm---------- */ 
+/* Necesito un entorno de servidor para enviar un correo, no solo html, por eso es necesario abrir con live server */
 ((d) => {
     const $form = d.querySelector(".contact__form"),
     $loader = d.querySelector(".contact__form--loader"),
@@ -52,7 +53,6 @@
             console.log(err);
             let message = err.statusText || "Ocurrió un error al enviar, intenta nuevamente"
             $response.querySelector("h3").innerHTML = `Error ${err.status}:${message}` 
-            $loader.classList.add("none");
         }).finally(() => {
             $loader.classList.add("none"); /* independientemente del resultado de la respuesta esto se ejecutará  */
             setTimeout(() => {
