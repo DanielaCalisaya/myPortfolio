@@ -42,7 +42,8 @@ body {
     margin: 0;
     overflow-x: hidden;
     /* Con lo que desborda el contenedor, en x(horizontal) que oculte y evita la barra de desplazamiento */
-    color: var(--text-color);
+    color: var(--white-color); /*  --text-color*/
+    background-color: var(--second-color);
 }
 a {
     color: var(--link-color);
@@ -335,13 +336,13 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     padding: 2rem 1rem;
 }
 .section__title { /* titulos de las secciones */
-    border-top: thin solid var(--first-color);/* linea delgada */
-    border-bottom: thin solid var(--first-color);
+    border-top: double var(--first-color);/* thin linea delgada | solid */
+    border-bottom: double var(--first-color);
     width: 250px;
     margin: 2rem auto;
     padding: .5rem 1rem;
     text-align: center;
-    color: var(--title-color);
+    color: var(--white-color);/* --title-color */
 }
 .text-center { /* alinear texto o botones de la parte acerca de */
     text-align: center;
@@ -536,7 +537,7 @@ progress::-moz-progress-bar { /* para el navegador Firefox */
     }
     .footer {
         margin-bottom: 0;
-        background-color: var(--second-color);
+        /* background-color: var(--second-color); */
     }
     .header {
         /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
