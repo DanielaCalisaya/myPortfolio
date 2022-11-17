@@ -39,11 +39,12 @@ html {
   /* Que hereden el tamaño de caja, es decir del html */
 }
 body {
-    margin: 0;
+    margin: 0 auto;
     overflow-x: hidden;
     /* Con lo que desborda el contenedor, en x(horizontal) que oculte y evita la barra de desplazamiento */
     color: var(--white-color); /*  --text-color*/
     background-color: var(--second-color);
+    max-width: 1440px; 
 }
 a {
     color: var(--link-color);
@@ -401,18 +402,21 @@ p {
     font-size: 2rem;
     text-decoration: none;
 }
-.skill__card { /* tarjetas section skills */
+.skills > .skills__container { /* tarjetas section skills */
+    display: grid;
+    grid-template-columns: repeat(2, 45%); /* 2 por 45, da 90, queda 10 de margen para el justify content */
+    justify-content: space-between;
+    align-content: center;
+}
+.skills .section__title { /* al titulo le decimos que ocupe las dos celdas, sino lo maneja como otra card, porque es hijo directo del div */
+    grid-column: span 2;
+}
+.skill__card {  
     margin: 1rem auto;
     padding: 1rem;
-    text-align: center; 
+    text-align: center;  
 }
-.skill__card h3 {
-    color: var(--title-color);
-}
-.skill__card svg {
-    margin-bottom: 1.25rem;
-    fill: var(--first-color);
-}
+
 
 
 /* MEDIA QUERY - 768 px */
@@ -423,13 +427,10 @@ p {
         justify-content: space-between;
     }
     .skills > .skills__container {
-        display: grid;
-        grid-template-columns: repeat(2,45%); /* 2 por 45, da 90, queda 10 de margen para el justify content */
-        justify-content: space-between;
-        align-content: center;
+        grid-template-columns: repeat(3, 30%);
     }
-    .skills .section__title { /* al titulo le decimos que ocupe las dos celdas, sino lo maneja como otra card, porque es hijo directo del div */
-        grid-column: span 2;
+    .skills .section__title { 
+        grid-column: span 3;
     }
 }
 
@@ -463,10 +464,10 @@ p {
         display: none;
     }
     .skills > .skills__container {
-        grid-template-columns: repeat(4, 24%); /* 3, 30% */
+        grid-template-columns: repeat(5, 18%); 
     }
     .skills .section__title { 
-        grid-column: span 4; /* 3 */
+        grid-column: span 5; 
     }
 }
 
