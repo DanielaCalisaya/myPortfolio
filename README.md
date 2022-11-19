@@ -1,3 +1,9 @@
-# My Portfolio
+# Frontend Developer
 
-Status: requiere actualización
+##     My Portfolio  ¯\ _(ツ)_ /¯
+
+### Code: Html, Css, Javascript
+
+### Tools: NodeJs, Git, formSubmit
+
+![cover](assets/cover.png)
