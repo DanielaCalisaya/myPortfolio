@@ -1,6 +1,6 @@
 # Frontend Developer
 
-##     My Portfolio  ¯\ _(ツ)_ /¯
+    My Portfolio  ¯\_(ツ)_/¯
 
 ### Code: Html, Css, Javascript
 
