@@ -1,8 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kolker+Brush&family=Playfair+Display:wght@500&family=Poor+Story&family=Zen+Antique&display=swap" rel="stylesheet"><!-- font-logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Playfair+Display:wght@500&family=Poor+Story&family=Zen+Antique&display=swap" rel="stylesheet"><!-- font-body -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/assets/favicon.ico"/>
+    <title>My ♥ Portfolio</title>
+    <meta name="description" content="Hola! bienvenidos a mi portfolio profesional, soy Frontend Developer">
+    <link rel="favicon" href="https://danielacalisaya.github.io/myPortfolio/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="https://danielacalisaya.github.io/myPortfolio/assets/favicon.ico">
+    <meta name="category" content="Programación">
+    <meta name="keywords" content="frontend maquetación developer">
+    <meta name="language" content="spanish">
+    <meta name="author" content="Daniela Calisaya">
+    <meta name="copyright" content="Daniela Calisaya">
+    <meta name="audience" content="all">
+    <meta name="robots" content="index, all, follow">
+    <meta itemprop="telephone" content="299 655-5715">
+    <meta name="theme-color" content="">
+    <meta name="twitter.card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:title" name="twitter:title" content="Daniela Calisaya - Frontend Developer">
+    <meta property="og:image" name="twitter:image" content="https://danielacalisaya.github.io/myPortfolio/assets/hero-image.png">
+    <meta property="og:url" name="twitter:url" content="https://danielacalisaya.github.io/">
+    <meta property="og:description" name="twitter:description" content="Hola! bienvenidos a mi portfolio profesional, soy Frontend Developer">
+    <link rel="canonical" href="https://danielacalisaya.github.io/">
+</head>
 <body>
-    <!-- header --><!-- ¯\_(ツ)_/¯ -->
+
+    <header class="header">
+        <section class="header__container">
+            <div class="header__container__logo">
+                <a href="index.html">Daniela Calisaya  </a><!-- ¯\_(ツ)_/¯ -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M20,3H4C2.897,3,2,3.897,2,5v14c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V5C22,3.897,21.103,3,20,3z M4,19V7h16 l0.002,12H4z"/>
+                    <path d="M9.293 9.293L5.586 13 9.293 16.707 10.707 15.293 8.414 13 10.707 10.707zM14.707 9.293L13.293 10.707 15.586 13 13.293 15.293 14.707 16.707 18.414 13z"/>
+                </svg>
+            </div>
+            <button class="header__container__menu__btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"/>
+                </svg>
+                <svg class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"/>
+                </svg>
+            </button>
+            <nav class="header__container__menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#acerca">Acerca</a>
+                <a href="#habilidades">Habilidades</a> 
+                <a href="#portafolio">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </section>
+    </header>
 
     <section id="inicio" class="home"> <!-- Enlaces en español, porque el sitio está en español y las clases en ingles -->
         <article class="hero__image" style="--hero-image: url('assets/hero-image.png'); --hero-attachment: fixed;"> <!-- todo el contenedor --> 

@@ -4,6 +4,6 @@
 
 ### Code: Html, Css, Javascript
 
-### Tools: NodeJs, React(in progress), Git, formSubmit
+### Tools: NodeJs, Git, formSubmit
 
 ![cover](assets/cover.png)
