@@ -1,0 +1,582 @@
+/* ----------Custom Properties---------- */
+:root {
+  --first-color: #d90062;
+  --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --second-color: #14192d;
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
+  --third-color: #501464;
+  --third-alpha-color: rgba(80, 20, 100, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #222;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --font: 'Zen Antique', serif;
+  --font-logo: 'Caveat', cursive; 
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/* ----------Reset---------- */
+/* https://www.youtube.com/watch?v=bXqPNoYFK8w */
+html {
+  box-sizing: border-box; 
+  /* El tamaño de la caja irá desde el borde no desde el contenido */
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth; 
+  /* Para el efecto de transición que hay en el header, solo con css */
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+/* Que hereden el tamaño de caja, es decir del html */
+}
+body {
+  margin: 0 auto;
+  overflow-x: hidden;
+  /* Con lo que desborda el contenedor, en x(horizontal) que oculte y evita la barra de desplazamiento */
+  color: var(--white-color); /*  --text-color*/
+  background-color: var(--second-color);
+  max-width: 1440px; 
+}
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+a:hover {
+  opacity: 0.75;
+}
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+p {
+  /* Espacio interlineado */
+  line-height: 1.6;
+}
+
+/* ----------Components---------- */
+
+/* ----------Contact Form---------- */
+.contact__form {
+  margin: 2rem auto;
+  padding: 1rem;
+  border: thin solid var(--first-color);
+  max-width: 800px;
+}
+.contact__form > * { /* todos los hijos directos de contact__form... */
+  padding: .5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+.contact__form input,
+.contact__form textarea {
+  font-size: 0.85rem;
+  font-family: var(--font);
+  outline: none;
+}
+.contact__form input {
+  border: 0; 
+  /* border-bottom: thin solid var(--gray-dark-color); */
+}
+.contact__form textarea {
+ /*  border: thin solid var(--gray-dark-color); */
+  resize: none; /* quita ese triangulo por defecto para que tenga un ancho y alto fijo asi no se puede modificar */
+}
+.contact__form input[type="submit"] { /* osea que los estilos se los aplica al submit pero apunta al tipo submit no a todos, usamos selector */
+  margin-top: 0;
+  cursor: pointer;
+  font-size: 1rem; 
+  transition: all 0.5s ease-in-out;
+  border: 0;
+}
+.contact__form input[type="submit"]:hover {
+  opacity: 0.75;
+}
+.contact__form *::placeholder { /* todos los placeholder que estan dentro */
+  color: var(--gray-dark-color);
+}
+.contact__form--response {
+  padding: 1rem;
+  width: 300px;
+  text-align: center;
+  background-color: var(--white-color);   
+}
+.contact__form--response svg{
+  margin-top: 2rem;
+  width: 4rem;
+  height: 4rem;
+  fill: var(--first-color);
+}
+.modal#gracias:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media screen and (min-width: 1024px) {
+  .contact__form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1rem; /* espaciado entre las columnas */
+  }
+  .contact__form input,
+  .contact__form textarea {
+      font-size: 1rem;
+  }
+  .contact__form textarea,
+  .contact__form--loader {
+      grid-column: span 2;
+  }
+  .contact__form input[type="submit"] {
+      margin-left: 0;
+  }
+}
+
+/* ----------HeroImage---------- */
+.hero__image {
+  background-image: var(--hero-image); 
+  /* la variable image no está en root, sino que se crea en el atributo styles que se le paso al contenedor article, y solo se define alli */
+  background-repeat: no-repeat;
+  background-size: cover; /* se adapte a la altura de manera proporcional del contenedor */
+  background-position: center; 
+  background-attachment: var(--hero-attachment); /* si tuviera scroll se desplazará junto con el contenido */
+}
+.hero__image--opacity {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);  
+}
+.hero__image--title {
+  font-size: 7.5vw; /* Fluid web design (en este caso con estas medidas no necesitaremos mas media querys para el title) */
+  color: var(--hero-title-color);
+}
+/* ----------Menu---------- */
+.header__container__logo svg{
+  fill: var(--first-color);
+}
+.header__container__menu__btn {
+  outline: thin solid var(--first-color); /* Ese margen o linea que da el botón por defecto que sea delgado y sólido, con color */
+  border: 0; /* borde por defecto */
+  cursor: pointer;
+  background-color: var(--second-color);
+}
+.header__container__menu__btn svg {
+  fill: var(--first-color); /* Asi le damos color al svg */
+}
+.header__container__menu {
+  background-color: var(--second-color);
+  position: fixed;/* Al tener una posicion fixed pierde sus propiedades de ancho y alto */
+  left: 0;
+  bottom: var(--header-height);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;/* si activamos o no la reacción a interactividad, porque por mas que la opacidad sea 0, al pasar sobre el elemento se ve la manito */
+  opacity: 0;
+  transition: opacity 0.5s ease; /* transicion a la opacidad con efecto de aceleración normal */
+}
+.header__container__menu.is-active { /* Le añado una clase */
+  opacity: 1;
+  pointer-events: auto;
+}
+.header__container__menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--first-color);
+}
+.header__container__menu a:hover {
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .header__container__menu__btn {
+      display: none;
+  }
+  .header__container__menu {
+      position: static; /* vuelve al valor normal */
+      width: auto; /* que se adapte a al ancho que tengan los enlaces */
+      flex-direction: row;
+      opacity: 1;
+      pointer-events: auto;
+  }
+  .header__container__menu a {
+      padding: 0 1rem;
+  }
+  .header__container__menu a:last-child {
+      padding-right: 0;
+    }
+  .header__container__menu a:hover {
+      background-color: transparent;
+  }
+}
+/* ----------Modal---------- */
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--first-color);
+  background-color: var(--second-alpha-color);/* --black-alpha-color */
+  opacity: 0;
+  pointer-events: none; /* quitamos interactividad */
+  transition: all 1s;
+}
+.modal__content {
+  position: relative;
+}
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.modal__close svg {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--second-color); /* para svg, en vez de color -> fill */
+}
+.modal[id|="proyecto"]:target { 
+  /* busca todos los elementos que tengan la clase modal y q su nombre de id 
+  empieze con la palabra proyecto y además sea el target de la pag en ese momento */
+  opacity: 1;
+  pointer-events: auto; 
+}
+
+/* ----------Utilities---------- */
+/* .bg-gray-light {  clase creada para el fondo de la seccion services 
+  background-color: var(--gray-light-color);
+} */
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.25rem 1rem var(--first-alpha-color)/* (0, 0, 0, 0.25) */
+}
+.btn { 
+  border-radius: .5rem;
+  padding: 1rem;
+  display: inline-block; /* las a tiene las caracteristicas de elemento en linea, le saco para mejor manejo */
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+.header__container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+.grey-scale { /* estilo de mi foto */
+ filter:grayscale(1); /* escala de grises */
+}
+.none {
+  display: none;
+}
+.section {
+  padding: 2rem 1rem;
+}
+.section__title { /* titulos de las secciones */
+  border-top: double var(--first-color);/* thin linea delgada | solid */
+  border-bottom: double var(--first-color);
+  width: 250px;
+  margin: 2rem auto;
+  padding: .5rem 1rem;
+  text-align: center;
+  color: var(--white-color);/* --title-color */
+}
+.text-center { 
+  text-align: center;
+}
+.text-left { 
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+@media screen and (min-width: 1024px) {
+  .full-lg-screen { /* section acerca...*/
+      width: 100%;
+      min-height: 100vh;
+  }
+  .text-lg-center {
+      text-align: center;
+  }
+  .text-lg-left {
+      text-align: left;
+  }
+  .text-lg-right {
+      text-align: right;
+  }
+}
+
+/* ----------Site Styles---------- */
+.about > article { /* section acerca(article) */
+  margin-bottom: 2rem;
+}
+.contact__card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 100%;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact__card > svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--first-color);
+}
+.contact__card > small {
+  margin-top: -1rem;
+}
+.footer {
+  margin-bottom: var(--header-height);
+  padding: 1rem;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+.header {
+  position: fixed; /* estará fijo */
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: var(--header-height);
+  padding: 1rem;
+  background-color: var(--second-color);
+}
+.header > .header__container { /* header container que es el hijo directo, por eso el mayor que */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__container__logo a {
+  color: var(--first-color);
+  font-family: var(--font-logo);
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
+.skills > .skills__container { /* tarjetas section skills */
+  display: grid;
+  grid-template-columns: repeat(2, 45%); /* 2 por 45, da 90, queda 10 de margen para el justify content */
+  justify-content: space-between;
+  align-content: center;
+}
+.skills .section__title { /* al titulo le decimos que ocupe las dos celdas, sino lo maneja como otra card, porque es hijo directo del div */
+  grid-column: span 2;
+}
+.skill__card {  
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;  
+}
+
+
+
+/* MEDIA QUERY - 768 px */
+@media screen and (min-width: 768px) { /* cuando el dispositivo sea pantalla y cuando la minima anchura sea 768*/
+  .contact__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 48%);
+      justify-content: space-between;
+  }
+  .skills > .skills__container {
+      grid-template-columns: repeat(3, 30%);
+  }
+  .skills .section__title { 
+      grid-column: span 3;
+  }
+}
+
+
+/* MEDIA QUERY - 1024 px */
+@media screen and (min-width: 1024px) {
+  .about { /* en desktop tiene 3 columnas las section acerca */
+      display: grid;
+      grid-template-columns: repeat(3, 30%);/* que repita el patrón 3 veces al 30%, sobrará 10%, eso será para el espacio entre si */
+      justify-content: space-between;
+      align-content: center;
+  }
+  .contact__cards {
+      grid-template-columns: repeat(4, 24%); /* ese 4 sobrante se reparte para el espaciado en si */
+      justify-content: space-between;
+  }
+  .footer {
+      margin-bottom: 0;
+      /* background-color: var(--second-color); */
+  }
+  .header {
+      /* sticky es una mezcla entre el posicionamiento relativo y el fijo, 
+      y se comportará como elemento fijo a la altura que yo lo defina,
+      y no se posiciona sobre ningun elemento */
+      position: sticky; 
+      top: 0;
+      padding: 0.5rem; 
+      height: calc(var(--header-height) - 0.5rem); /* se resta este 0.5rem al valor de la variable */
+  }
+  .header__container__logo svg {
+      display: none;
+  }
+  .skills > .skills__container {
+      grid-template-columns: repeat(5, 18%); 
+  }
+  .skills .section__title { 
+      grid-column: span 5; 
+  }
+}
+
+
+/* ----------ProgressBar---------- 
+progress {
+  width: 100%;
+  height: 1rem;
+  background-color: var(--gray-color);
+}
+progress::-webkit-progress-bar {  seudoclases -> *
+  background-color: var(--gray-color);
+}
+progress::-webkit-progress-value {
+  background-color: var(--gray-dark-color);
+}
+progress::-moz-progress-bar {  para el navegador Firefox 
+  background-color: var(--gray-dark-color);
+}
+.progress {
+  margin: 1rem auto;
+}
+.progress > p {  dentro de progress hay hijos directos(p) 
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem; 
+} */
+
+
+/* ----------Portfolio----------
+.portfolio__card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.portfolio__card img {  son img cuadradas, no hay tantos inconvenientes si ponemos todo al 100% 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  para evitar q se pierda la proporcion de la img 
+}
+.portfolio__card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--second-alpha-color);
+  color: var(--white-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.portfolio__card:hover .portfolio__card-info{
+  opacity: 1;
+  pointer-events: auto;
+}
+.portfolio__card-info > div {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  border: thin solid var(--white-color);
+}
+.portfolio__modal {
+  background-color: var(--white-color);
+  padding: 1rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio__modal h3 {
+  border-bottom: medium solid var(--first-color);
+  padding: .5rem 0;
+  margin: 1rem auto;
+  color: var(--title-color);
+}
+.portfolio__modal-details {
+  display: grid;
+  grid-template-columns: 40% 60%;  letra en negrita ocupa el 40 y los detalles de cada punto ocupa 60 
+  grid-auto-rows: 2rem;  espaciado en las filas 
+}
+.portfolio__modal-details b {
+  color: var(--first-color);
+}
+@media screen and (min-width: 768px) {
+  .portfolio > .container {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+  }
+  .portfolio .section__title { 
+      grid-column: span 2;
+  }
+  .portfolio__modal {
+      flex-direction: row;
+      max-width: 800px;
+  }
+  .portfolio__modal-info {
+      margin-left: 1rem;
+      align-self: center;  para el centrado en el eje vertical de un contenedor hijo 
+  }
+}
+@media screen and (min-width: 1024px) {
+  .portfolio > .container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  .portfolio .section__title { 
+      grid-column: span 3;
+  }
+}
+*/
